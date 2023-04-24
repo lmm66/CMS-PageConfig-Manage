@@ -1,0 +1,30 @@
+@font-face {
+  font-family: "cms-icon";
+  src: url('cms-icon.eot?t=1622542042971'); /* IE9*/
+  src: url('cms-icon.eot?t=1622542042971#iefix') format('embedded-opentype'), /* IE6-IE8 */
+  url("cms-icon.woff2?t=1622542042971") format("woff2"),
+  url("cms-icon.woff?t=1622542042971") format("woff"),
+  url('cms-icon.ttf?t=1622542042971') format('truetype'), /* chrome, firefox, opera, Safari, Android, iOS 4.2+*/
+  url('cms-icon.svg?t=1622542042971#cms-icon') format('svg'); /* iOS 4.1- */
+}
+
+[class^="cms-icon-"], [class*=" cms-icon-"] {
+  font-family: 'cms-icon' !important;
+  font-size:16px;
+  font-style:normal;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+
+.cms-icon-ad:before { content: "\ea01"; }
+.cms-icon-alert:before { content: "\ea02"; }
+.cms-icon-cube:before { content: "\ea03"; }
+.cms-icon-float:before { content: "\ea04"; }
+.cms-icon-line:before { content: "\ea05"; }
+.cms-icon-nav:before { content: "\ea06"; }
+.cms-icon-notice:before { content: "\ea07"; }
+.cms-icon-online:before { content: "\ea08"; }
+.cms-icon-overflow:before { content: "\ea09"; }
+.cms-icon-prod:before { content: "\ea0a"; }
+.cms-icon-text:before { content: "\ea0b"; }

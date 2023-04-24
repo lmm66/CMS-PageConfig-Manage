@@ -1,0 +1,28 @@
+// 页面主色
+@color-1: #008AC8;
+@color-1-h: darken(@color-1, 10%);
+@color-1-bg: lighten(@color-1, 56%);   // 主色的背景浅色
+// 页面辅色
+@color-2: #fe7929;
+@color-2-h: darken(@color-2, 10%);
+// 价格颜色
+@color-price: #e42c30;
+// 深色
+@color-black: #333;
+@page-header-height: 55px;
+@content-header-height: 64px;
+@content-header-top: 72px;
+// 单行超出显示省略号样式
+.ellipsis() {
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+}
+
+// 公共引入背景图片样式
+.bic(@url, @size: 100%, @size2: auto) {
+  background-image: url(@url);
+  background-repeat: no-repeat;
+  background-size: @size @size2;
+  background-position: center;
+}

@@ -1,0 +1,237 @@
+ /*
+ *
+ * 全局变量
+ *
+ *
+ * */
+
+/*vue加载闪现问题解决*/
+[v-cloak] {
+  display: none;
+}
+
+html,body {
+  min-height: 100%;
+  height: 100%;
+  min-width: 1000px;
+}
+body {
+  font-family: 'Arial', 'microsoft yahei';
+  color: #333;
+  line-height: 1.5;
+  font-size: 12px;
+  word-break: break-all;
+  background-color: #f6f6f6;
+  margin: 0px auto;
+  padding: 0px;
+  -webkit-font-smoothing: antialiased;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+form,
+ul,
+li,
+ol,
+dl,
+dt,
+dd,
+input,
+button,
+textarea,
+form {
+  margin: 0px;
+  padding: 0px;
+  font-weight: normal;
+}
+
+dt,
+dd {
+  line-height: inherit;
+}
+
+a {
+  color: #333;
+  text-decoration: none;
+  outline: none;
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0)
+}
+
+a:hover,
+a:active,
+a:focus {
+  color: @color-1;
+  text-decoration: none;
+  outline: none;
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0)
+}
+
+ul,
+ol,
+dl {
+  list-style: none;
+}
+
+img {
+  border: none;
+  vertical-align: top;
+  max-width: 100%;
+}
+
+input,
+button,
+select,
+textarea {
+  outline: none;
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+  box-sizing: border-box;
+  font-family: inherit;
+  font-size: inherit;
+  color: inherit;
+  min-height: auto;
+}
+textarea {
+  resize: none
+}
+//
+//// 美化滚动条
+//::-webkit-scrollbar {
+//  width:9px;
+//  height:9px;
+//}
+
+// 公共间距样式
+.mt-0 {
+  margin-top: 0px !important;
+}
+.mt-10 {
+  margin-top: 10px !important;
+}
+.mr-0 {
+  margin-right: 0 !important;
+}
+.mr-5 {
+  margin-right: 5px !important;
+}
+.mr-10 {
+  margin-right: 10px !important;
+}
+.mr-15 {
+  margin-right: 15px !important;
+}
+.mr-20 {
+  margin-right: 20px !important;
+}
+.pt-0 {
+  padding-top: 0px !important;
+}
+.pr-20 {
+  padding-right: 20px !important;
+}
+
+// 公共颜色样式
+.color-1 {
+  color: @color-1;
+}
+.color-help {
+  color: #969799;
+}
+
+// 公共布局样式
+.flex-center {
+  display: flex;
+  align-items: center;
+}
+
+// 无数据样式
+.no-data {
+  padding: 100px;
+  text-align: center;
+  font-size: 12px;
+  color: #999;
+}
+
+
+/*
+*
+* 模态框内表格样式
+*
+*/
+// 表格筛选
+.table-search {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 10px;
+}
+// 表格列表
+.dialog-table {
+  th {
+    color: #333;
+    background: #f7f8fa;
+  }
+}
+// 表格翻页
+.table-page {
+  padding-top: 10px;
+  overflow: hidden;
+  .el-pagination {
+    float: right;
+  }
+}
+
+/*
+*
+* 组件编辑内模拟表单样式
+*
+*/
+.com-form-group {
+  padding: 10px 16px;
+  display: flex;
+  align-items: center;
+  .com-form-label {
+    margin-right: 16px;
+    font-size: 14px;
+    color: #969799;
+    line-height: 18px;
+    white-space: nowrap;
+  }
+  .com-form-content {
+    flex: 1;
+    align-items: center;
+  }
+}
+
+
+/*
+*
+* element-ui 组件自定义样式
+*
+*/
+
+// button
+.el-button {
+  font-weight: 400;
+  border-radius: 2px;
+}
+
+// 模态框
+.el-dialog__header {
+  border-bottom: 1px solid #eee;
+}
+.el-dialog__body {
+  padding: 16px;
+}
+.el-dialog__footer {
+  text-align: center;
+}
+
+// input
+.el-input__inner, .el-textarea__inner {
+  padding-left: 10px;
+  padding-right: 10px;
+  border-radius: 2px;
+}

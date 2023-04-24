@@ -1,0 +1,15 @@
+{
+  "name": "svg2font",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "build:font": "node index.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {},
+  "dependencies": {
+    "svgtofont": "^3.11.0"
+  }
+}
