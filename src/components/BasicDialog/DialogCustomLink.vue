@@ -1,22 +1,28 @@
 <template>
   <!-- 自定义链接地址模态框 -->
-  <el-dialog title="自定义链接" :visible.sync="_dialogVisible" width="600px">
-    <el-form
-      ref="customLinkForm"
-      :model="customLinkForm"
-      :rules="customLinkRules"
-      label-width="90px"
-      class="demo-ruleForm"
-    >
-      <el-form-item label="链接地址" prop="link">
-        <el-input v-model="customLinkForm.link" placeholder="请输入要跳转到的链接地址" />
+  <el-dialog title="自定义链接"
+             :visible.sync="_dialogVisible"
+             width="600px">
+    <el-form ref="customLinkForm"
+             :model="customLinkForm"
+             :rules="customLinkRules"
+             label-width="90px"
+             class="demo-ruleForm">
+      <el-form-item label="链接地址"
+                    prop="link">
+        <el-input v-model="customLinkForm.link"
+                  placeholder="请输入要跳转到的链接地址" />
       </el-form-item>
     </el-form>
-    <div slot="footer" class="dialog-footer">
-      <el-button size="medium" type="primary" @click="submitForm('customLinkForm')">
+    <div slot="footer"
+         class="dialog-footer">
+      <el-button size="medium"
+                 type="primary"
+                 @click="submitForm('customLinkForm')">
         保 存
       </el-button>
-      <el-button size="medium" @click="_dialogVisible = false">
+      <el-button size="medium"
+                 @click="_dialogVisible = false">
         取 消
       </el-button>
     </div>
@@ -34,7 +40,7 @@ export default {
       default: false
     }
   },
-  data() {
+  data () {
     return {
       // 自定义链接表单项
       customLinkForm: {
@@ -49,17 +55,17 @@ export default {
   computed: {
     // 动态获取及修改弹出框是否显示字段
     _dialogVisible: {
-      get: function() {
+      get: function () {
         return this.dialogVisible
       },
-      set: function(val) {
+      set: function (val) {
         this.$emit('update:dialogVisible', val)
       }
     }
   },
   watch: {
     // 模态框显示时清空输入框数据
-    dialogVisible(newVal, oldVal) {
+    dialogVisible (newVal, oldVal) {
       if (newVal) {
         this.customLinkForm.link = ''
       }
@@ -67,7 +73,7 @@ export default {
   },
   methods: {
     // 自定义链接地址提交
-    submitForm(formName) {
+    submitForm (formName) {
       this.$refs[formName].validate(valid => {
         if (valid) {
           let linkUrl = this.customLinkForm.link

@@ -15,7 +15,9 @@
               @dragend="onDragEnd(component)">
             <i :class="component.iconClass"></i>
             <p class="name">{{ component.name }}</p>
-            <p class="num">{{ componentMap[component.data.component] || 0 }}/{{ component.maxNumForAdd }}</p>
+            <p class="num">
+              {{ componentMap[component.data.component] || 0 }}/{{ component.maxNumForAdd }}
+            </p>
           </li>
         </ul>
       </el-collapse-item>
@@ -42,6 +44,7 @@ export default {
   },
   methods: {
     ...mapActions(['pageChange']),
+    // 修改组件的拖拽状态、拖拽的组件数据
     ...mapMutations(['SET_DRAG_STATE', 'SET_DRAG_COMPONENT']),
 
     // 控制当前组件是否可以拖拽

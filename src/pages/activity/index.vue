@@ -11,7 +11,8 @@
                  @click="onEdit(row.id)">编辑</el-button>
       <el-button type="text"
                  size="mini"
-                 @click="onToggleActivity(row)">{{row.is_abled === 0 ? '上线' : '下线'}}</el-button>
+                 @click="onToggleActivity(row)">
+        {{row.is_abled === 0 ? '上线' : '下线'}}</el-button>
       <el-button type="text"
                  size="mini"
                  @click="onPreview(row.id, row.title)">预览</el-button>
@@ -35,6 +36,7 @@ import { updateStatus, deletePage } from '@/api/activity';
 export default {
   data () {
     return {
+      // 搜索表单定义
       formItems: [
         {
           comp: 'input',
@@ -53,6 +55,7 @@ export default {
           includeAll: false
         },
       ],
+      // 表格定义
       tableColumns: [
         { prop: 'id', label: '页面ID' },
         { prop: 'name', label: '页面标题' },
@@ -72,18 +75,17 @@ export default {
      */
     async getTableData ({ current, size, ...tableData }, fn) {
       let { ...params } = tableData;
-      //   console.log(params);  // { total: 0, name: ''}
       params.pageNum = current;
       params.pageSize = size;
-      //   console.log(params);  // { total: 0, name: '', pageNum: 1, pageSize: 10 }
-      let res = await getCmsPageList(params);   // {current: 1, size: 10, total: 0, name: '' }
-      //   console.log(res);
+      // 组装请求体参数为
+      console.log(`向后端传递的请求体参数为`, params);
+      let res = await getCmsPageList(params);   // { total: 0, name: '', isAbled, pageNum: 1, pageSize: 10 }
       let { list, total } = res.data;
       // 后端返回的页面状态的字段为is_abled跟前端定义的字段status不匹配，对数据二次处理
       list.forEach(item => {
         item.status = item.is_abled ? '上线' : '下线'
       })
-      //   console.log(res);
+      console.log(res);
       fn({
         data: list || [],
         total

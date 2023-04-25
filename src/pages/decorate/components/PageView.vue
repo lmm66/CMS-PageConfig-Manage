@@ -63,6 +63,7 @@ export default {
           break;
         }
       }
+      // 设置拖拽组件添加位置的索引
       this.SET_DRAG_INDEX(addIndex);
       // 跨源通信传递数据给crs, 触发预添加效果
       this.VIEW_ADD_PREVIEW(addIndex);
@@ -77,6 +78,8 @@ export default {
         this.pageChange({
           type: 'delete'
         })
+        // 还原拖拽组件的初始索引, 防止频繁触发dragout事件
+        this.SET_DRAG_INDEX(null);
       }
     },
 
